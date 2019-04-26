@@ -1,9 +1,12 @@
 import cv2
 import numpy as np
 
+
+
+
 # set basic variables
-# location = "../images/img_fil_2.PNG"
-location = "../images/filament_mirrors.jpg"
+location = "../images/img_fil_2.PNG"
+# location = "../images/filament_mirrors2.jpg"
 boundaries = [([0, 0, 0], [80, 80, 80])]  # looking for those colors
 gray_boundaries = [(0, 120)]
 image_width = 3265
@@ -11,10 +14,11 @@ image_height = 2448
 image_width_half = int(image_width / 2)
 image_height_half = int(image_height / 2)
 # img_0_crop_values = int[(1070, 1570), (1070, 1695), (970, 1695), (970, 1570)]
-img_0_crop_values_y = int[1070, 1070, 970, 970]
-img_0_crop_values_x = int[1570, 1695, 1695, 170]
-#[(1070, 1570), (1070, 1695), (970, 1695), (970, 1570)]
-#[y0x0, y0x1, y1x0, y1x1]
+img_0_crop_values_y = [1070, 1070, 970, 970]
+img_0_crop_values_x = [1570, 1695, 1695, 170]
+# [(1070, 1570), (1070, 1695), (970, 1695), (970, 1570)]
+# [y0x0, y0x1, y1x0, y1x1]
+
 
 def get_img_data():
     height = img.shape[0]
@@ -70,8 +74,11 @@ print("Percentage of black : {:.3f}%".format(values[2]))
 
 # show image, destroy windows
 cv2.imshow("image", img)
-cv2.imshow("img_0", img_0)
+cv2.setWindowTitle("image", "img")
+cv2.namedWindow("image", flags=cv2.WINDOW_GUI_EXPANDED)
+cv2.setWindowProperty("image", cv2.WINDOW_GUI_EXPANDED, cv2.WINDOW_GUI_EXPANDED)
 # cv2.imshow("img_1", img_1)
+
 # cv2.imshow("image_gray", gray_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
