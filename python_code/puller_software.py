@@ -14,7 +14,7 @@ def get_img_data():
     return height, width
 
 
-def draw_recntangle(width, height):
+def draw_rectangle(width, height):
     cv2.rectangle(img, (0, 0), (int(width / 2) - 60, height), (255, 255, 255), -1)
     cv2.rectangle(img, (int(width / 2) + 60, 0), (width, height), (255, 255, 255), -1)
 
@@ -42,7 +42,7 @@ img = cv2.imread(location)
 
 # main setup
 sizes = get_img_data()  # 1 is width, 0 is height   # Size of image
-draw_recntangle(sizes[1], sizes[0])
+draw_rectangle(sizes[1], sizes[0])
 values = get_values_of_black()
 
 # print values
