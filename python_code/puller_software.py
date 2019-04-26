@@ -3,9 +3,7 @@ import numpy as np
 
 # set basic variables
 location = "../images/img_fil_2.PNG"
-boundaries = [
-    ([0, 0, 0], [128, 128, 128])  # looking for those colors
-]
+boundaries = [([0, 0, 0], [128, 128, 128])]  # looking for those colors
 height = 0
 width = 0
 
@@ -53,6 +51,7 @@ print("Total pixels: {}".format(values[0]))
 print("Black pixels: {}".format(values[1]))
 print("Percentage of black : {:.3f}%".format(values[2]))
 
+# show image, destroy windows
 cv2.imshow("image", img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
